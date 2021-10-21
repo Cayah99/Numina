@@ -18,7 +18,7 @@ import warnings
 warnings.filterwarnings('ignore')
 output_notebook()
 
-numina_data = pd.read_csv('numina&weather_data.csv')
+numina_data = pd.read_csv(join(dirname(__file__),'Data/numina&weather_data.csv'))
 numina_data = numina_data.drop(['Unnamed: 0', 'weekday', 'month', 'YYYYMMDD'], axis=1)
 numina_data['time'] = pd.to_datetime(numina_data['time'])
 numina_data['Average_windspeed'] = numina_data['Average_windspeed']*0.1
